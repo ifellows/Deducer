@@ -1,0 +1,153 @@
+0.7-7
+    o	Fixed factor editing bug. (Thanks to Rob Camp for the report)
+    o	Fixed small rendering issue in plot builder facets.
+    o	Added help link for quick plots and templates. (Thanks to Jane Carlen for the report)
+    o	Moved many packages from Depends to Imports to avoid needless top level namespace objects.
+    o	Added java thread pool to avoid out-of-memory errors on low memory systems.
+    o	Datasets with masked names (such as "sample") are now properly handled by data.frame selectors. (thanks to Lurie Malai for the report)
+    o	Added ability to export predictions to new datasets in linear/logistic/GLM models.
+0.7-6
+    o	Fixed bug where dialogs written in R would sometimes print debuging info (Thanks to Vincent Nijs for the report)
+    o	Fixed incorrect spelling of "Purples" in plot builder (thanks to Kieran Short for the report)
+    o	Fixed improper saving of guides in plot builder (thanks to Kieran Short for the report)
+    o	Fixed reset bug in correlation dialog (Thanks to Vincent Nijs for the report)
+    o	Updated for ggplot2 0.9.3
+0.7-5
+    o	Fixed bug introduced in 0.7-3 where VariableSelector could cause freeze upon clicking add/remove
+        in conjunction with large data.frames.
+    o	Removed Quaqua laf
+0.7-3
+    o	Removed ability to calculate mid p-values and cramer's V
+    o   moved back to GPL-2   
+    o	added citation link to JSS
+0.7-0
+    o	Plot builder: "drop" defaults to TRUE in scales
+    o	Plot builder: Fixed issue where save would rarely fail 
+    o	Plot builder: corrected required aes for errorbarh (Thanks to Manuel Spinola for the report)
+	(Thanks to Matthew Ockendon for the report)
+    o	Updated for ggplot 0.9.2
+    o	Data viewer does lazy loading, and can thus now handle data with millions of rows and thousands of
+    	columns
+    o	Added: "GUI Add-ons" menu item to select common general purpose Deducer Add-on packages.
+    o	Moved many interactions from Java with R off the GUI event thread, 
+    	and most calls to R are now cancelable if they take too much time.
+0.6-3
+    o	fixed legend.position and position_fill in plot builder
+    o	checks without error when no shared library is present
+0.6-0
+    o	updated the Plot Builder for ggplot2 0.9.0
+0.5-1
+    o	updated quaqua for os x 10.7
+0.5-0
+    o	Added geom_rug and geom_segment to builder 
+    o	Data viewer even more plug-in friendly
+    o	Fixed typo in frequencies.R (Thanks to Bob Muenchen for the report)
+    o	Fixed typo in Data Viewer (Thanks to Mark Handcock for the report)
+    o	Added missing comma causing syntax error in k-sample test (pairwise Bonferroni) (Thanks to Karl Heinz for the report)
+    o	fixed vjust bug in geom_text (Thanks to Allan for the report)
+    o	updated for JGR 1.7-8 and R 2.14.0
+    o	Moved paired t-test to Deducer from DeducerExtras
+0.4-4
+    o	improved date/time conversion
+    o	Fixed bug that caused coord_flip to turn into coord_equal 
+		(thanks to Erich Studerus for the bug report)
+    o	Fixed http://groups.google.com/group/deducer/browse_thread/thread/a1cbba859d93f07a?pli=1
+    o	Fixed Data Loader in non-JGR consoles
+    o	Added borders to variable lists that were missing them.
+0.4-3
+    o	Fixed bugs in some of the advanced options in the plot builder
+	    	(thanks to Erich Studerus for the bug reports)
+    o	Data viewer size restricted to screen size
+    o	Added k-sample post-hoc comparisons
+    o	Factored back end to make it easier to plug deducer into 
+	    different consoles
+    o	Refactored the Data viewer to be plug-in friendly
+    o	Added sort to data view column contextual menus
+    o	Added Links to manual/videos in the default data viewer panel
+
+0.4-2
+    o	Added interactive plots: scatter, histogram, bar, box, 
+        mosaic, and Parallel coordinate
+0.4-1
+    o	ggplot2 GUI: fixed stat summary layout bug
+    o	Fixed combobox bug on Mac OS 64-bit 
+    o	Added TextFieldWidget and ObjectChooserWidget
+    o	Factor editor and Recode dialog handle empty strings
+    o	Menu items for common templates
+0.4-0
+    o	ggplot2 GUI added
+    o	Removed all calls to low level rni
+    o	Added alternate parameter based plug-in API
+0.3-2
+    o	API bug fixes
+0.3-1
+    o	Mac OS CRAN build fix
+0.3-0
+    o	Listeners for Swing callbacks to R functions
+    o	ListWidget added
+    o	Data viewer less painfully slow, and several bugs fixed
+    o	Added variable transformation dialog, with options for centering, standardizing, 
+    	robust standardizing, log, reciprocal, rank, box-cox, powers, quantile binning, 
+    	equal width binning, arcsine, and custom expressions. Before and after histograms
+    	can be displayed.
+0.2-3
+    o	Added plug-in interface and tools for GUI package development
+0.2-2
+    o	Fixed compatibility issue with new version of ggplot2
+    o	Some minor bug fixes
+0.2-1
+    o	Changed interface to a number of R functions to improve API
+0.2-0
+    o	R 2.10 / JGR 1-7 compatible
+    o	Some minor bug fixes
+    o	Changed data.frame sorting function
+
+0.1
+    o	GLM models, with 
+    			1. model preview 
+    			2. Intuitive model builder
+    			3. diagnostic plots  
+    			4. Component residual and added variable plots  			
+    			5. Anova (type II and III implementing LR, Wald and F tests)
+				6. Parameter summary tables and parameter correlations
+    			7. Influence and colinearity diagnostics
+    			8. Post-hoc tests and confidence intervals with (or without) adjustments for multiple testing.
+    			9. Custom linear hypothesis tests
+    			10.Effect mean summaries (with confidence intervals), and plots
+    			11.Exports: Residuals, Standardized residuals, Studentized residuals, Predicted Values (linear and link)
+    			   Cooks distance, DFBETA, DFFITS, hat values, and Cov Ratio
+    			12.Observation weights and subseting
+    o	Logistic regression models with all GLM features + ROC plots
+    o	Linear regression models with all GLM features + Heteroskedastic robust tests.
+    o	Now works with non-JGR consoles
+    o	Integrated menu system into the Windows Rgui 
+    o	Online manual accessible from dialogs
+    
+0.0-1
+    o	added new data viewer with excel like editing. a variable view is included assist in the editing
+    	of variable properties.
+    o	added in variable recoding dialog to Data menu and variable view
+    o	added factor editor to Data menu
+    o	added data.frame sorting dialog and R function to Data menu
+    o	added data.frame merging dialog to Data menu
+    o	added frequency dialog to Analysis menu, which returns variable level frequencies
+    o	added descriptives dialog to Analysis menu, which creates common descriptive statistic tables
+    	including mean, minimum, maximum, standard deviation, skew and kurtosis. Custom statistics can
+    	also be included easily within the gui or in the console. Descriptives can also be 
+    	stratified by any number of variables.
+    o	Added Contingency tables dialog, along with support R functions. Prints out contingency 
+    	tables in a pretty format, along with cell statistics such as expected counts, residuals,
+    	standardized residuals, adjusted standardized residuals, row %, column % and cell total %. 
+    	Stratification by a separate variable is supported.Various statistical tests 
+    	and effect sizes are implemented, including the chi-squared, likelihood ratio, 
+    	Fisher's exact, Kruskal-Wallis, and Mantel-Haenszel tests along with the Cramer's V, 
+    	Kendall's Tau, and Spearman's Rho measures of effect size. Monte Carlo simulated tests 
+    	are available for the Chi-squared and Fisher's exact tests. Mid p-values are implemented for
+    	Monte Carlo and exact tests.
+    o	Added data.frame subset dialog.
+    o	Added Two sample tests. Currently implements the t-test, ks.test, wilcoxon, resampling (permutation),
+    	and the brunner-munzel test. Functions for pretty printing are provided which make the application of
+    	these tests to multiple variables much more visibly appealing.
+    o	Added One sample tests. Currently implements the t-test and the Shapiro-Wilk.
+    o	Added K sample tests. Currently implements ANOVA, Welch ANOVA, and kruskal-wallis.
+    o	Added Correlations. Currently implements Pearson's, Spearman's, and Kendall's.

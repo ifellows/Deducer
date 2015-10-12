@@ -1,0 +1,49 @@
+#!/bin/sh
+
+PNAME=Deducer
+
+cd ${PNAME}
+VER=`sed -n 's/^Version:.\([0-9.-]\{1,\}\).*/\1/p' DESCRIPTION`
+cd ..
+
+if [ -z "$VER" ]; then
+    echo "ERROR: invalid version in DESCRIPTION"
+    exit 1
+fi
+
+
+
+echo "Copying package base ..."
+cp -r ${PNAME} tmp
+ORGSRC=org/org
+
+echo "Compile deducer.jar from Sources"
+if [ -e "${ORGSRC}/Makefile" ]; then
+    if [ -e "${ORGSRC}/deducer.jar" ]; then	
+        rm -rf ${ORGSRC}/deducer.jar
+    fi
+	echo "Make new one"
+	make -C "$ORGSRC" deducer.jar
+	JARFILE="${ORGSRC}/deducer.jar"
+fi
+
+echo "$pwd"
+mkdir -p tmp/${PNAME}/java
+cp -r ${ORGSRC} tmp/${PNAME}/java
+echo "Copying $JARFILE to package"
+cp $JARFILE tmp/${PNAME}/inst/java
+
+
+cd tmp
+
+echo "Removing SVN/CVS and backup stuff ..."
+
+
+echo "Creating package ..."
+R CMD build ${PNAME}
+cd ..
+cp tmp/${PNAME}_${VER}.tar.gz .
+echo "Done."
+ls -l ${PNAME}_${VER}.tar.gz
+
+rm -rf tmp

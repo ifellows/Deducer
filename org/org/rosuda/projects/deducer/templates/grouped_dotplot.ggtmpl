@@ -1,0 +1,200 @@
+<PlottingElement active="true" className="org.rosuda.deducer.plots.PlottingElement" compound="false" helpUrl="" iconUrl="/icons/ggplot_icons/template_default.png" name="grouped_dotplot" type="template">
+<ElementModel className="org.rosuda.deducer.plots.Template" data="Prestige">
+<elements>
+<PlottingElement active="true" className="org.rosuda.deducer.plots.PlottingElement" compound="false" helpUrl="http://had.co.nz/ggplot2/geom_dotplot.html" iconUrl="/icons/ggplot_icons/layer_default.png" name="dotplot" type="geom">
+<ElementModel className="org.rosuda.deducer.plots.Layer" data="Prestige" isGeom="true" isStat="false">
+<Stat className="org.rosuda.deducer.plots.Stat" defaultGeom="dotplot" name="bindot">
+<params>
+<Param className="org.rosuda.deducer.widgets.param.ParamCharacter" defaultValue="dotdensity" name="method" required="true" requiresVariableSelector="false" title="method" value="dotdensity" viewType="org.rosuda.deducer.widgets.param.ParamComboBoxWidget">
+<options element_0="dotdensity" element_1="histodot"/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamCharacter" defaultValue="bygroup" name="binpositions" required="true" requiresVariableSelector="false" title="binpositions" value="bygroup" viewType="org.rosuda.deducer.widgets.param.ParamComboBoxWidget">
+<options element_0="bygroup" element_1="all"/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamCharacter" defaultValue="x" name="binaxis" required="true" requiresVariableSelector="false" title="binaxis" value="y" viewType="org.rosuda.deducer.widgets.param.ParamComboBoxWidget">
+<options element_0="x" element_1="y"/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" lowerBound="0.0" name="binwidth" required="true" requiresVariableSelector="false" title="binwidth" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamAny" defaultValue="" name="origin" required="true" requiresVariableSelector="false" title="origin" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldLongWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamVector" name="breaks" numeric="true" required="true" requiresVariableSelector="false" title="breaks" viewType="org.rosuda.deducer.widgets.param.ParamVectorBuilderWidget">
+<options/>
+<labels/>
+<value/>
+<defaultValue/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" defaultValue="0.9" lowerBound="0.0" name="width" required="true" requiresVariableSelector="false" title="width" value="0.9" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamLogical" defaultValue="false" name="drop" required="true" requiresVariableSelector="false" title="drop" value="false" viewType="org.rosuda.deducer.widgets.param.ParamCheckBoxWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamLogical" defaultValue="true" name="right" required="true" requiresVariableSelector="false" title="right" value="true" viewType="org.rosuda.deducer.widgets.param.ParamCheckBoxWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamLogical" defaultValue="false" name="na.rm" required="true" requiresVariableSelector="false" title="remove missing" value="false" viewType="org.rosuda.deducer.widgets.param.ParamCheckBoxWidget">
+<options/>
+<labels/>
+</Param>
+</params>
+<aess>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" name="x" preferCategorical="false" preferNumeric="false" required="true" title="X" useVariable="true"/>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" defaultVariable="..count.." name="y" preferCategorical="false" preferNumeric="false" required="true" title="Y" useVariable="true"/>
+</aess>
+<generated element_0="count"/>
+</Stat>
+<Geom className="org.rosuda.deducer.plots.Geom" defaultPosition="identity" defaultStat="bindot" name="dotplot">
+<params>
+<Param className="org.rosuda.deducer.widgets.param.ParamCharacter" defaultValue="up" name="stackdir" required="true" requiresVariableSelector="false" title="stackdir" value="center" viewType="org.rosuda.deducer.widgets.param.ParamComboBoxWidget">
+<options element_0="up" element_1="down" element_2="center" element_3="centerwhole"/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" defaultValue="1.0" name="stackratio" required="true" requiresVariableSelector="false" title="stackratio" value="1.0" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" defaultValue="1.0" name="dotsize" required="true" requiresVariableSelector="false" title="dotsize" value="1.0" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+</params>
+<aess>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" name="x" preferCategorical="false" preferNumeric="false" required="true" title="X" useVariable="true"/>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" defaultValue="" defaultVariable="..count.." name="y" preferCategorical="true" preferNumeric="false" required="true" title="Y" useVariable="true" value=""/>
+<Aes className="Aes" dataType="col" defaultUseVariable="false" defaultValue="#000000" name="colour" preferCategorical="false" preferNumeric="false" required="false" title="Colour" useVariable="false" value="#000000"/>
+<Aes className="Aes" dataType="col" defaultUseVariable="false" name="fill" preferCategorical="false" preferNumeric="false" required="false" title="Fill" useVariable="false"/>
+<Aes className="Aes" dataType="bounded" defaultUseVariable="false" defaultValue="1.0" lowerBound="0.0" name="alpha" preferCategorical="false" preferNumeric="true" required="false" title="Alpha" upperBound="1.0" useVariable="false" value="1.0"/>
+<Aes className="Aes" dataType="none" defaultUseVariable="false" name="group" preferCategorical="false" preferNumeric="false" required="false" title="Group" useVariable="false"/>
+</aess>
+</Geom>
+<Position className="org.rosuda.deducer.plots.Position" name="identity"/>
+</ElementModel>
+</PlottingElement>
+</elements>
+<mAess>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="true" name="x" show="true">
+<elementIndices element_0="0"/>
+<generated element_0="count"/>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" name="x" preferCategorical="true" preferNumeric="false" required="true" title="Group" useVariable="true"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="true" name="y" show="true">
+<elementIndices element_0="0"/>
+<generated element_0="count"/>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" defaultVariable="..count.." name="y" preferCategorical="false" preferNumeric="false" required="true" title="Variable" useVariable="true"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="colour" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count"/>
+<Aes className="Aes" dataType="col" defaultUseVariable="false" defaultValue="#000000" name="colour" preferCategorical="false" preferNumeric="false" required="false" title="Colour" useVariable="false" value="#000000"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="fill" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count"/>
+<Aes className="Aes" dataType="col" defaultUseVariable="false" name="fill" preferCategorical="false" preferNumeric="false" required="false" title="Fill" useVariable="false"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="alpha" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count"/>
+<Aes className="Aes" dataType="bounded" defaultUseVariable="false" defaultValue="1.0" lowerBound="0.0" name="alpha" preferCategorical="false" preferNumeric="true" required="false" title="Alpha" upperBound="1.0" useVariable="false" value="1.0"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="group" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count"/>
+<Aes className="Aes" dataType="none" defaultUseVariable="false" name="group" preferCategorical="false" preferNumeric="false" required="false" title="Group" useVariable="false"/>
+</MaskingAes>
+</mAess>
+<mParams>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="method" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamCharacter" defaultValue="dotdensity" name="method" required="true" requiresVariableSelector="false" title="method" value="dotdensity" viewType="org.rosuda.deducer.widgets.param.ParamComboBoxWidget">
+<options element_0="dotdensity" element_1="histodot"/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="binpositions" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamCharacter" defaultValue="bygroup" name="binpositions" required="true" requiresVariableSelector="false" title="binpositions" value="bygroup" viewType="org.rosuda.deducer.widgets.param.ParamComboBoxWidget">
+<options element_0="bygroup" element_1="all"/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="binaxis" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamCharacter" defaultValue="x" name="binaxis" required="true" requiresVariableSelector="false" title="binaxis" value="y" viewType="org.rosuda.deducer.widgets.param.ParamComboBoxWidget">
+<options element_0="x" element_1="y"/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="binwidth" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" lowerBound="0.0" name="binwidth" required="true" requiresVariableSelector="false" title="binwidth" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="origin" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamAny" defaultValue="" name="origin" required="true" requiresVariableSelector="false" title="origin" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldLongWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="breaks" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamVector" name="breaks" numeric="true" required="true" requiresVariableSelector="false" title="breaks" viewType="org.rosuda.deducer.widgets.param.ParamVectorBuilderWidget">
+<options/>
+<labels/>
+<value/>
+<defaultValue/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="width" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" defaultValue="0.9" lowerBound="0.0" name="width" required="true" requiresVariableSelector="false" title="width" value="0.9" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="drop" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamLogical" defaultValue="false" name="drop" required="true" requiresVariableSelector="false" title="drop" value="false" viewType="org.rosuda.deducer.widgets.param.ParamCheckBoxWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="right" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamLogical" defaultValue="true" name="right" required="true" requiresVariableSelector="false" title="right" value="true" viewType="org.rosuda.deducer.widgets.param.ParamCheckBoxWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="na.rm" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamLogical" defaultValue="false" name="na.rm" required="true" requiresVariableSelector="false" title="remove missing" value="false" viewType="org.rosuda.deducer.widgets.param.ParamCheckBoxWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="stackdir" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamCharacter" defaultValue="up" name="stackdir" required="true" requiresVariableSelector="false" title="stackdir" value="center" viewType="org.rosuda.deducer.widgets.param.ParamComboBoxWidget">
+<options element_0="up" element_1="down" element_2="center" element_3="centerwhole"/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="stackratio" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" defaultValue="1.0" name="stackratio" required="true" requiresVariableSelector="false" title="stackratio" value="1.0" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="dotsize" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" defaultValue="1.0" name="dotsize" required="true" requiresVariableSelector="false" title="dotsize" value="1.0" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+</mParams>
+</ElementModel>
+</PlottingElement>

@@ -1,0 +1,136 @@
+<PlottingElement active="true" className="org.rosuda.deducer.plots.PlottingElement" compound="false" helpUrl="" iconUrl="/icons/ggplot_icons/template_bar.png" name="grouped_bar" type="template">
+<ElementModel className="org.rosuda.deducer.plots.Template" data="mpg">
+<elements>
+<PlottingElement active="true" className="org.rosuda.deducer.plots.PlottingElement" compound="false" helpUrl="http://had.co.nz/ggplot2/geom_bar.html" iconUrl="/icons/ggplot_icons/geom_bar.png" name="bar" type="geom">
+<ElementModel className="org.rosuda.deducer.plots.Layer" data="mpg" isGeom="true" isStat="false">
+<Stat className="org.rosuda.deducer.plots.Stat" defaultGeom="bar" name="bin">
+<params>
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" lowerBound="0.0" name="binwidth" required="true" requiresVariableSelector="false" title="binwidth" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamAny" defaultValue="" name="origin" required="true" requiresVariableSelector="false" title="origin" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldLongWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamVector" name="breaks" numeric="true" required="true" requiresVariableSelector="false" title="breaks" viewType="org.rosuda.deducer.widgets.param.ParamVectorBuilderWidget">
+<options/>
+<labels/>
+<value/>
+<defaultValue/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" lowerBound="0.0" name="width" required="true" requiresVariableSelector="false" title="width" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+<Param className="org.rosuda.deducer.widgets.param.ParamLogical" defaultValue="true" name="drop" required="true" requiresVariableSelector="false" title="drop" value="true" viewType="org.rosuda.deducer.widgets.param.ParamCheckBoxWidget">
+<options/>
+<labels/>
+</Param>
+</params>
+<aess>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" name="x" preferCategorical="false" preferNumeric="false" required="true" title="X" useVariable="true"/>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" defaultVariable="..count.." name="y" preferCategorical="false" preferNumeric="false" required="true" title="Y" useVariable="true" variable="..count.."/>
+</aess>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+</Stat>
+<Geom className="org.rosuda.deducer.plots.Geom" defaultPosition="stack" defaultStat="bin" name="bar">
+<params/>
+<aess>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" name="x" preferCategorical="false" preferNumeric="false" required="true" title="X" useVariable="true"/>
+<Aes className="Aes" dataType="col" defaultUseVariable="false" name="colour" preferCategorical="true" preferNumeric="false" required="false" title="Colour" useVariable="false"/>
+<Aes className="Aes" dataType="col" defaultUseVariable="false" defaultValue="#333333" name="fill" preferCategorical="true" preferNumeric="false" required="false" title="Fill" useVariable="true" value="#333333"/>
+<Aes className="Aes" dataType="bounded" defaultUseVariable="false" defaultValue="0.5" lowerBound="0.0" name="size" preferCategorical="true" preferNumeric="false" required="false" title="Size" useVariable="false" value="0.5"/>
+<Aes className="Aes" dataType="ln" defaultUseVariable="false" defaultValue="1" name="linetype" preferCategorical="true" preferNumeric="false" required="false" title="Line" useVariable="false" value="1"/>
+<Aes className="Aes" dataType="bounded" defaultUseVariable="false" defaultValue="1.0" lowerBound="0.0" name="weight" preferCategorical="false" preferNumeric="true" required="false" title="Weight" useVariable="false" value="1.0"/>
+<Aes className="Aes" dataType="bounded" defaultUseVariable="false" defaultValue="1.0" lowerBound="0.0" name="alpha" preferCategorical="false" preferNumeric="true" required="false" title="Alpha" upperBound="1.0" useVariable="false" value="1.0"/>
+<Aes className="Aes" dataType="none" defaultUseVariable="false" name="group" preferCategorical="false" preferNumeric="false" required="false" title="Group" useVariable="false"/>
+</aess>
+</Geom>
+<Position className="org.rosuda.deducer.plots.Position" name="dodge"/>
+</ElementModel>
+</PlottingElement>
+</elements>
+<mAess>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="true" name="y" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" defaultVariable="..count.." name="y" preferCategorical="false" preferNumeric="false" required="true" title="Y" useVariable="true"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="true" name="x" show="true">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="any" defaultUseVariable="true" name="x" preferCategorical="true" preferNumeric="false" required="true" title="Variable" useVariable="true"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="colour" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="col" defaultUseVariable="false" name="colour" preferCategorical="true" preferNumeric="false" required="false" title="Colour" useVariable="false"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="true" name="fill" show="true">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="col" defaultUseVariable="false" defaultValue="#333333" name="fill" preferCategorical="true" preferNumeric="false" required="false" title="Group" useVariable="true" value="#333333"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="size" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="bounded" defaultUseVariable="false" defaultValue="0.5" lowerBound="0.0" name="size" preferCategorical="true" preferNumeric="false" required="false" title="Size" useVariable="false" value="0.5"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="linetype" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="ln" defaultUseVariable="false" defaultValue="1" name="linetype" preferCategorical="true" preferNumeric="false" required="false" title="Line" useVariable="false" value="1"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="weight" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="bounded" defaultUseVariable="false" defaultValue="1.0" lowerBound="0.0" name="weight" preferCategorical="false" preferNumeric="true" required="false" title="Weight" useVariable="false" value="1.0"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="alpha" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="bounded" defaultUseVariable="false" defaultValue="1.0" lowerBound="0.0" name="alpha" preferCategorical="false" preferNumeric="true" required="false" title="Alpha" upperBound="1.0" useVariable="false" value="1.0"/>
+</MaskingAes>
+<MaskingAes className="org.rosuda.deducer.plots.Template.MaskingAes" isMap="false" name="group" show="false">
+<elementIndices element_0="0"/>
+<generated element_0="count" element_1="density" element_2="ncount" element_3="ndensity"/>
+<Aes className="Aes" dataType="none" defaultUseVariable="false" name="group" preferCategorical="false" preferNumeric="false" required="false" title="Group" useVariable="false"/>
+</MaskingAes>
+</mAess>
+<mParams>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="binwidth" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" lowerBound="0.0" name="binwidth" required="true" requiresVariableSelector="false" title="binwidth" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="origin" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamAny" defaultValue="" name="origin" required="true" requiresVariableSelector="false" title="origin" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldLongWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="breaks" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamVector" name="breaks" numeric="true" required="true" requiresVariableSelector="false" title="breaks" viewType="org.rosuda.deducer.widgets.param.ParamVectorBuilderWidget">
+<options/>
+<labels/>
+<value/>
+<defaultValue/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="width" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamNumeric" lowerBound="0.0" name="width" required="true" requiresVariableSelector="false" title="width" viewType="org.rosuda.deducer.widgets.param.ParamTextFieldWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+<MaskingParam className="org.rosuda.deducer.plots.Template.MaskingParam" elementIndex="0" paramName="drop" show="false">
+<Param className="org.rosuda.deducer.widgets.param.ParamLogical" defaultValue="true" name="drop" required="true" requiresVariableSelector="false" title="drop" value="true" viewType="org.rosuda.deducer.widgets.param.ParamCheckBoxWidget">
+<options/>
+<labels/>
+</Param>
+</MaskingParam>
+</mParams>
+</ElementModel>
+</PlottingElement>

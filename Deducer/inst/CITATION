@@ -1,0 +1,19 @@
+citHeader("To cite Deducer in publications use:")
+
+citEntry(entry = "Article",
+  title        = "{Deducer}: A Data Analysis GUI for {R}",
+  author       = personList(as.person("Ian Fellows")),
+  journal      = "Journal of Statistical Software",
+  year         = "2012",
+  volume       = "49",
+  number       = "8",
+  pages        = "1--15",
+  url          = "http://www.jstatsoft.org/v49/i08/",
+
+  textVersion  =
+  paste("Ian Fellows (2012).",
+        "Deducer: A Data Analysis GUI for R.",
+        "Journal of Statistical Software, 49(8), 1-15.",
+        "URL http://www.jstatsoft.org/v49/i08/.")
+)
+
