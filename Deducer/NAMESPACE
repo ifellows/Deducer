@@ -21,4 +21,3 @@ S3method(print,  multi.test)
 
 S3method(as.matrix,cor.matrix)
 S3method(sort,data.frame)
-S3method(summary,lm)

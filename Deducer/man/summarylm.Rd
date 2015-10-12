@@ -1,9 +1,6 @@
-% 
-% TODO: Write Documentation 
-% 
 
-\name{summary.lm}
-\alias{summary.lm}
+\name{summarylm}
+\alias{summarylm}
 \title{
   Summary table for a linear model
 }
@@ -11,7 +8,7 @@
   Computes the coefficients, std. errors, t values, and p-values for a linear model in the presence of possible heteroskedasticity.
 }
 \usage{
-\method{summary}{lm}(object,correlation=FALSE,symbolic.cor = FALSE,white.adjust=FALSE,...)
+summarylm(object,correlation=FALSE,symbolic.cor = FALSE,white.adjust=FALSE,...)
 }
 \arguments{
   \item{object}{an object of class lm.}
@@ -33,5 +30,5 @@ trt <- c(4.81,4.17,4.41,3.59,5.87,3.83,6.03,4.89,4.32,4.69)
 group <- gl(2,10,20, labels=c("Ctl","Trt"))
 weight <- c((ctl-mean(ctl))*10+mean(ctl), trt)
 lm.D9 <- lm(weight ~ group)
-summary(lm.D9,white.adjust=TRUE)
+summarylm(lm.D9,white.adjust=TRUE)
 }

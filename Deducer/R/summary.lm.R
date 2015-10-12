@@ -2,7 +2,7 @@
 # Author: Ian
 ###############################################################################
 
-summary.lm<-function(object,correlation=FALSE,symbolic.cor = FALSE,white.adjust=FALSE,...){
+summarylm<-function(object,correlation=FALSE,symbolic.cor = FALSE,white.adjust=FALSE,...){
 	if(is.logical(white.adjust) && !white.adjust)
 		return(stats::summary.lm(object,correlation,symbolic.cor,...))
 	if(is.logical(white.adjust))

@@ -105,7 +105,7 @@ public class LinearModel extends GLMModel {
 				}
 			}
 			if(this.options.summary){
-				String summaryCall = "summary("+modelName+(options.paramCor ?",correlation=TRUE":"")+
+				String summaryCall = "summarylm("+modelName+(options.paramCor ?",correlation=TRUE":"")+
 											(hccm? ",white.adjust='hc3'":"")+")";
 				if(preview){
 					try{
