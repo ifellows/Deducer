@@ -14,6 +14,7 @@ fi
 
 
 echo "Copying package base ..."
+mkdir tmp
 cp -r ${PNAME} tmp
 ORGSRC=org/org
 
@@ -30,14 +31,12 @@ fi
 echo "$pwd"
 mkdir -p tmp/${PNAME}/java
 cp -r ${ORGSRC} tmp/${PNAME}/java
+rm tmp/${PNAME}/java/org/Makefile
 echo "Copying $JARFILE to package"
 cp $JARFILE tmp/${PNAME}/inst/java
 
 
 cd tmp
-
-echo "Removing SVN/CVS and backup stuff ..."
-
 
 echo "Creating package ..."
 R CMD build ${PNAME}
