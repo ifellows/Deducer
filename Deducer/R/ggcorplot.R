@@ -80,61 +80,14 @@ ggcorplot <- function(cor.mat,data=NULL,lines=TRUE,line.method=c("lm","loess"),t
 	z_cor$y_label <- ezLev(factor(z_cor$y_label),names(data))
 	diag <- z_cor[z_cor$x_label==z_cor$y_label,]
 	z_cor<-z_cor[z_cor$x_label!=z_cor$y_label,]
-	#start creating layers
-	points_layer <- layer(
-			geom = 'point'
-			, data = z
-			, mapping = aes(
-					x = x_var
-					, y = y_var,alpha=trans
-			)
-	)
 	
+	#start creating layers	
+	points_layer <- geom_point(aes(x = x_var, y = y_var, alpha=trans),data = z)
 	bin_layer<-geom_hex(data = z, mapping = aes(x = x_var, y = y_var,alpha=trans),bins=10)
-	
-	lm_line_layer <- layer(
-			geom = 'line'
-			, geom_params = list(colour = 'red')
-			, stat = 'smooth'
-			, stat_params = list(method = line.method)
-			, data = z
-			, mapping = aes(
-					x = x_var
-					, y = y_var
-			)
-	)
-	lm_ribbon_layer <- layer(
-			geom = 'ribbon'
-			, geom_params = list(fill = 'green', alpha = .5)
-			, stat = 'smooth'
-			, stat_params = list(method = line.method)
-			, data = z
-			, mapping = aes(
-					x = x_var
-					, y = y_var
-			)
-	)
-	cor_text <- layer(
-			geom = 'text'
-			, data = z_cor
-			, mapping = aes(
-					x=y_mid
-					, y=x_mid
-					, label=cor
-					, size = rsq
-					, colour = p
-			)
-	)
-	var_text <- layer(
-			geom = 'text'
-			, geom_params = list(size=var_text_size)
-			, data = diag
-			, mapping = aes(
-					x=y_mid
-					, y=x_mid
-					, label=x_label
-			)
-	)
+	lm_line_layer <- stat_smooth(aes(x=x_var, y=y_var), method=line.method)
+	cor_text <- geom_text(aes(x=y_mid, y=x_mid, label=cor, size = rsq, colour = p), data=z_cor)
+	var_text <- geom_text(aes(x=y_mid, y=x_mid, label=x_label), data=diag, size=var_text_size)
+
 	f <- facet_grid(y_label~x_label,scales='free')
 	o <- theme(
 			panel.grid.minor = element_blank()
@@ -146,12 +99,13 @@ ggcorplot <- function(cor.mat,data=NULL,lines=TRUE,line.method=c("lm","loess"),t
 			,axis.title.x = element_blank()
 			,legend.position='none'
 	)
+	
 	size_scale <- scale_size(limits = c(0,1),range=cor_text_limits)
 	the.plot<-ggplot(data=z)
 	if(type=="bins")
 		the.plot<-the.plot+bin_layer
 	else if(type=="points")
-		the.plot<-the.plot+points_layer
+		the.plot<-the.plot+points_layer + scale_alpha_identity()
 	the.plot<-the.plot+var_text+
 			cor_text+
 			f+
@@ -160,7 +114,7 @@ ggcorplot <- function(cor.mat,data=NULL,lines=TRUE,line.method=c("lm","loess"),t
 	if(type=="bins")
 		the.plot<-the.plot+scale_fill_gradient(low="grey", high="black")
 	if(lines)
-		the.plot<-the.plot+lm_ribbon_layer+lm_line_layer
+		the.plot<-the.plot+lm_line_layer
 	if(main=="auto")
 		main<-cor.mat[[1]][[1]]$method
 	the.plot<-the.plot+ggtitle(main)

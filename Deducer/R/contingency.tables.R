@@ -371,11 +371,11 @@ add.chi.squared<-function(tables, simulate.p.value = FALSE, B = 10000){
 
 
 	if(simulate.p.value){
-		chi.func<-list(function(x) chisq.test(x),
+		chi.func<-list(function(x) chisq.test(x, correct=FALSE),
 						function(x) chisq.test(x,simulate.p.value=TRUE,B=B))
 		types<-c("asymptotic","monte.carlo")
 	}else{
-		chi.func<-list(function(x) chisq.test(x))
+		chi.func<-list(function(x) chisq.test(x, correct=FALSE))
 		types<-c("asymptotic")
 	}
 	add.test(tables,"Chi Squared",chi.func,types)

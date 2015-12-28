@@ -1,11 +1,11 @@
 Package: Deducer
-Version: 0.7-8
-Date: 2015-10-12
+Version: 0.7-9
+Date: 2015-12-28
 Title: A Data Analysis GUI for R
 Author: Ian Fellows with contributions from others (see documentation).
 Maintainer: Ian Fellows <ian@fellstat.com>
 Description: An intuitive, cross-platform graphical data analysis system. It uses menus and dialogs to guide the user efficiently through the data manipulation and analysis process, and has an excel like spreadsheet for easy data frame visualization and editing. Deducer works best when used with the Java based R GUI JGR, but the dialogs can be called from the command line. Dialogs have also been integrated into the Windows Rgui.
-Depends:	R (>= 2.15.0), ggplot2 (>= 0.9.3), 
+Depends:	R (>= 2.15.0), ggplot2 (>= 2.0.0), 
 			JGR(>= 1.7-10), car, MASS
 Imports: rJava, e1071, scales, plyr, foreign, multcomp, effects
 Suggests: lawstat, Hmisc, XLConnect

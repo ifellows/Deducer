@@ -48,7 +48,7 @@ public class Geom {
 		
 		g.name = "abline";
 		g.defaultPosition = "identity";
-		g.defaultStat = "abline";
+		g.defaultStat = "identity";
 		Aes aes;
 		
 		aes = Aes.makeAes("intercept");
@@ -79,7 +79,13 @@ public class Geom {
 		aes = Aes.makeAes("group");
 		aes.required = false;
 		g.aess.add(aes);
+		/*
+		Param p = ParamFactory.makeParam("slope");
+		g.params.add(p);
 		
+		p = ParamFactory.makeParam("intercept");
+		g.params.add(p);
+		*/
 		return g;
 	}
 	
@@ -133,7 +139,7 @@ public class Geom {
 		Geom g = new Geom();
 		
 		g.name = "bar";
-		g.defaultStat = "bin";
+		g.defaultStat = "count";
 		g.defaultPosition = "stack";
 		
 		Aes aes;
@@ -186,7 +192,7 @@ public class Geom {
 		Geom g = new Geom();
 		
 		g.name = "bin2d";
-		g.defaultStat = "bin2d";
+		g.defaultStat = "bin_2d";
 		g.defaultPosition = "identity";
 		
 		Aes aes;
@@ -482,9 +488,9 @@ public class Geom {
 	public static Geom makeDensity2d(){
 		Geom point = new Geom();
 		
-		point.name = "density2d";
+		point.name = "density_2d";
 		
-		point.defaultStat = "density2d";
+		point.defaultStat = "density_2d";
 		
 		point.defaultPosition = "identity";
 		
@@ -709,7 +715,7 @@ public class Geom {
 		
 		g.name = "hex";
 		
-		g.defaultStat = "binhex";
+		g.defaultStat = "bin_hex";
 		
 		g.defaultPosition = "identity";
 			
@@ -797,11 +803,14 @@ public class Geom {
 		
 		g.name = "hline";
 		
-		g.defaultStat = "hline";
+		g.defaultStat = "identity";
 		
 		g.defaultPosition = "identity";
 		
-		Aes aes = Aes.makeAes("colour");
+		Aes aes = Aes.makeAes("yintercept");
+		g.aess.add(aes);
+		
+		aes = Aes.makeAes("colour");
 		aes.value = Color.black;
 		aes.defaultValue = aes.value;
 		g.aess.add(aes);
@@ -818,7 +827,10 @@ public class Geom {
 		
 		aes = Aes.makeAes("group");
 		g.aess.add(aes);
-		
+		/*
+		Param p = ParamFactory.makeParam("yintercept");
+		g.params.add(p);
+		*/
 		return g;
 	}	
 	
@@ -1001,6 +1013,8 @@ public class Geom {
 		point.aess.add(aes);
 		
 		aes = Aes.makeAes("shape");
+		aes.value = new Integer(19);
+		aes.defaultValue = new Integer(19);
 		point.aess.add(aes);
 		
 		aes = Aes.makeAes("colour",Color.black,null);
@@ -1548,10 +1562,13 @@ public class Geom {
 		Geom g = new Geom();
 		
 		g.name = "vline";
-		g.defaultStat = "vline";
+		g.defaultStat = "identity";
 		g.defaultPosition = "identity";
 		
-		Aes aes = Aes.makeAes("colour",Color.black,null);
+		Aes aes = Aes.makeAes("xintercept");
+		g.aess.add(aes);
+		
+		aes = Aes.makeAes("colour",Color.black,null);
 		g.aess.add(aes);
 		
 		aes = Aes.makeAes("size");
@@ -1565,7 +1582,10 @@ public class Geom {
 		
 		aes = Aes.makeAes("group");
 		g.aess.add(aes);
-		
+		/*
+		Param p = ParamFactory.makeParam("xintercept");
+		g.params.add(p);
+		*/
 		return g;
 	}
 	
@@ -1590,7 +1610,7 @@ public class Geom {
 			return Geom.makeCrossbar();
 		else if(geomName=="density")
 			return Geom.makeDensity();
-		else if(geomName=="density2d")
+		else if(geomName=="density_2d")
 			return Geom.makeDensity2d();
 		else if(geomName=="dotplot")
 			return Geom.makeDotPlot();

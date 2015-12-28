@@ -54,12 +54,50 @@ public class Stat {
 		s.defaultGeom = "point";
 		return s;
 	}
-	
+	/*
 	public static Stat makeAbline(){
 		Stat s = new Stat();
 		s.name = "abline";
 		s.defaultGeom = "abline";
 		
+		return s;
+	}
+	*/
+	public static Stat makeCount(){
+		Stat s = new Stat();
+		s.name = "bar";
+		s.defaultGeom = "bar";
+		
+		Aes aes;
+		
+		aes = Aes.makeAes("x");
+		aes.required = true;
+		s.aess.add(aes);
+		
+		aes = Aes.makeAes("y");
+		aes.defaultVariable = "..count..";
+		aes.variable = "..count..";
+		s.aess.add(aes);
+		
+		Param p ;
+		ParamNumeric pn;
+		
+		p= ParamFactory.makeParam("binwidth");
+		s.params.add(p);
+		
+		p= ParamFactory.makeParam("origin");
+		s.params.add(p);
+		
+		p= ParamFactory.makeParam("breaks");
+		s.params.add(p);
+		
+		p= ParamFactory.makeParam("width");
+		s.params.add(p);
+		
+		p= ParamFactory.makeParam("drop");
+		s.params.add(p);
+		
+		s.generated.add("count");
 		return s;
 	}
 	
@@ -107,7 +145,7 @@ public class Stat {
 	
 	public static Stat makeBin2d(){
 		Stat s = new Stat();
-		s.name = "bin2d";
+		s.name = "bin_2d";
 		s.defaultGeom = "rect";
 		
 		Aes aes;
@@ -367,8 +405,8 @@ public class Stat {
 	
 	public static Stat makeDensity2d(){
 		Stat s = new Stat();
-		s.name = "density2d";
-		s.defaultGeom = "density2d";
+		s.name = "density_2d";
+		s.defaultGeom = "density_2d";
 		
 		Aes aes;
 		
@@ -455,7 +493,7 @@ public class Stat {
 	
 	public static Stat makeBinhex(){
 		Stat s = new Stat();
-		s.name = "binhex";
+		s.name = "bin_hex";
 		s.defaultGeom = "hex";
 		
 		Aes aes;
@@ -493,7 +531,7 @@ public class Stat {
 		s.generated.add("piece");
 		return s;
 	}	
-	
+	/*
 	public static Stat makeHline(){
 		Stat s = new Stat();
 		s.name = "hline";
@@ -509,7 +547,7 @@ public class Stat {
 		
 		return s;
 	}	
-	
+	*/
 	public static Stat makeQq(){
 		Stat s = new Stat();
 		s.name = "qq";
@@ -760,7 +798,7 @@ public class Stat {
 		
 		return s;
 	}	
-	
+	/*
 	public static Stat makeVline(){
 		Stat s = new Stat();
 		s.name = "vline";
@@ -776,19 +814,19 @@ public class Stat {
 		
 		return s;
 	}
-	
+	*/
 	public static Stat makeStat(String statName){
 		if(statName=="identity")
 			return Stat.makeIdentity();
-		else if(statName=="abline")
-			return Stat.makeAbline();
+		//else if(statName=="abline")
+		//	return Stat.makeAbline();
 		else if(statName=="bin")
 			return Stat.makeBin();
-		else if(statName=="bin2d")
+		else if(statName=="bin_2d")
 			return Stat.makeBin2d();
 		else if(statName=="bindot")
 			return Stat.makeBinDot();
-		else if(statName=="binhex")
+		else if(statName=="bin_hex")
 			return Stat.makeBinhex();		
 		else if(statName=="boxplot")
 			return Stat.makeBoxplot();
@@ -796,14 +834,14 @@ public class Stat {
 			return Stat.makeContour();
 		else if(statName=="density")
 			return Stat.makeDensity();
-		else if(statName=="density2d")
+		else if(statName=="density_2d")
 			return Stat.makeDensity2d();
 		else if(statName=="ecdf")
 			return Stat.makeEcdf();
 		else if(statName=="function")
 			return Stat.makeFunction();
-		else if(statName=="hline")
-			return Stat.makeHline();
+		//else if(statName=="hline")
+		//	return Stat.makeHline();
 		else if(statName=="qq")
 			return Stat.makeQq();
 		else if(statName=="quantile")
@@ -820,8 +858,10 @@ public class Stat {
 			return Stat.makeUnique();
 		else if(statName=="ydensity")
 			return Stat.makeYDensity();
-		else if(statName=="vline")
-			return Stat.makeVline();
+		//else if(statName=="vline")
+		//	return Stat.makeVline();
+		else if(statName=="count")
+			return Stat.makeCount();
 		return null;
 	}
 

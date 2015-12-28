@@ -1,3 +1,9 @@
+0.7-9
+    o	Updated for ggplot2 2.0
+    o	Fixed bug in one sided perm.t.test (thanks to Winston Lin for the report).
+    o	Contingency table chi-squared tests no longer use continuity corrections by default for 2x2 tables (Thanks to Oliver Valero Coppin for discussions on this).
+    
+0.7-8
 0.7-7
     o	Fixed factor editing bug. (Thanks to Rob Camp for the report)
     o	Fixed small rendering issue in plot builder facets.

@@ -22,12 +22,12 @@ public class PlotController {
 		"simple_dotplot","grouped_dotplot","mean","line","grouped_line",
 		"simple_boxplot","grouped_boxplot","scatter","scatter_smooth",
 		"histogram_2d","bubble"};
-	protected static String[] geomNames = {"abline","area","bar","bin2d","blank","boxplot","contour","crossbar","density","density2d",
+	protected static String[] geomNames = {"abline","area","bar","bin2d","blank","boxplot","contour","crossbar","density","density_2d",
 			"dotplot","errorbar","errorbarh","freqpoly","hex","histogram","hline","jitter","line","linerange",
 			"path","point","pointrange","polygon","quantile","raster", "rect","ribbon","rug","segment","smooth","step","text",
 			"tile","violin","vline"};
-	protected static String[] statNames = {"abline","bin","bin2d","bindot","binhex","boxplot","contour","density","density2d","ecdf","function",
-			"hline","identity","qq","quantile","smooth","spoke","sum","summary","unique","ydensity","vline"};
+	protected static String[] statNames = {"bin","bin_2d","bindot","bin_hex","boxplot","contour", "count","density","density_2d","ecdf","function",
+			"identity","qq","quantile","smooth","spoke","sum","summary","unique","ydensity"};
 	protected static String[] scaleNames = {"area","size","size_manual","size_identity",
 		"colour_gradient", "colour_hue","colour_brewer","colour_gradient2","colour_gradientn","colour_grey","colour_manual","colour_identity",
 		"fill_gradient","fill_hue","fill_brewer","fill_gradient2","fill_gradientn","fill_grey","fill_manual","fill_identity",
@@ -40,7 +40,7 @@ public class PlotController {
 	protected static String[] facetNames = {"grid","wrap"};
 	protected static String[] coordNames = {"cartesian","equal","flip","map","polar","trans"};
 	protected static String[] posNames = {"dodge","identity","jitter","stack","fill"};
-	protected static String[] themeNames = { "grey","bw","classic","minimal","theme","title","xlab","ylab"};	
+	protected static String[] themeNames = { "grey", "dark", "bw","classic","minimal","theme","title","xlab","ylab"};	
 	
 	
 	public static void init(){

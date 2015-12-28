@@ -86,20 +86,19 @@ public class ParamStatSummary extends Param{
 			int sel = ((Integer)val.get(0)).intValue();
 			if(sel==0){
 				calls = new String[]{"fun.data = mean_sdl",
-									"mult = " + val.get(2).toString()};
+									"fun.args = list(mult = " + val.get(2).toString() + ")"};
 			}
 			if(sel==1){
 				calls = new String[]{"fun.data = mean_cl_normal",
-									"conf.int = " + val.get(1).toString()};
+									"fun.args = list(conf.int = " + val.get(1).toString() + ")"};
 			}
 			if(sel==2){
 				calls = new String[]{"fun.data = median_hilow",
-									"conf.int = " + val.get(1).toString()};
+									"fun.args = list(conf.int = " + val.get(1).toString() + ")"};
 			}
 			if(sel==3){
 				calls = new String[]{"fun.data = mean_cl_boot",
-									"conf.int = " + val.get(1).toString(),
-									"B = " + val.get(3).toString()};
+									"fun.args = list(conf.int = " + val.get(1).toString()+", B = " + val.get(3).toString() + ")"};
 			}
 			if(sel==4){
 				Vector v = new Vector();
