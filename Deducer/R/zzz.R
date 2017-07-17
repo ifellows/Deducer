@@ -107,11 +107,11 @@ JLabel <- NULL
 .dialogs <- list()
 .dialogGenerators <- NULL
 .windowsGUI <- NULL
-
+.vol <- new.env()
 
 .onAttach <- function(libname, pkgname){
-	if(!is.null(.startupMsgs))
-		packageStartupMessage(.startupMsgs)
+	if(!is.null(.vol$.startupMsgs))
+		packageStartupMessage(.vol$.startupMsgs)
 }
 
 .onLoad <- function(libname, pkgname) { 
@@ -120,15 +120,16 @@ JLabel <- NULL
 	.i.par <- parent.env(.imports)
 	
 	#handle messages on .onAttach
-	ipe <- new.env(parent=.i.par)
-	attr(ipe, "name") <- "volatiles:Deducer"
-	parent.env(.imports) <- ipe
-	ipe$.startupMsgs <- NULL
+	#ipe <- new.env(parent=.i.par)
+	#attr(ipe, "name") <- "volatiles:Deducer"
+	#parent.env(.imports) <- ipe
+	#ipe$.startupMsgs <- NULL
+	.vol$.startupMsg <- NULL
 	startupMessage <- function(x){
-		if(is.null(ipe$.startupMsgs))
-			ipe$.startupMsgs <- x
+		if(is.null(.vol$.startupMsgs))
+			.vol$.startupMsgs <- x
 		else
-			ipe$.startupMsgs <- paste(ipe$.startupMsgs,x,sep="\n")
+			.vol$.startupMsgs <- paste(.vol$.startupMsgs,x,sep="\n")
 	}
 	
 	

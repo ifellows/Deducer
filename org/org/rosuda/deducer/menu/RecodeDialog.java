@@ -200,6 +200,8 @@ public class RecodeDialog extends javax.swing.JDialog implements ActionListener 
 			String entry = (String) recodeVariableList.getSelectedValue();
 			entry = entry.substring(0,entry.indexOf("\u2192"));
 			String newVar = (String) JOptionPane.showInputDialog(this,"Recode "+entry+" into:");
+			if(newVar == null || newVar == "")
+				return;
 			newVar = RController.makeValidVariableName(newVar);
 			((DefaultListModel) recodeVariableList.getModel()).removeElementAt(selectedIndex);
 			((DefaultListModel) recodeVariableList.getModel()).addElement(entry+"\u2192"+newVar);
