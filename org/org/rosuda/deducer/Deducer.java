@@ -141,6 +141,7 @@ public class Deducer {
 				EzMenuSwing.getMenu(JGR.MAINRCONSOLE, dataMenu).addSeparator();						
 				EzMenuSwing.addJMenuItem(JGR.MAINRCONSOLE, dataMenu, "Merge Data", "merge", cListener);
 				EzMenuSwing.addJMenuItem(JGR.MAINRCONSOLE, dataMenu, "Subset", "subset", cListener);
+				EzMenuSwing.addJMenuItem(JGR.MAINRCONSOLE, dataMenu, "Compute", "compute", cListener);
 				menuIndex++;
 			}
 			
@@ -386,6 +387,12 @@ public class Deducer {
 				execute(newDat+"<-as.data.frame(t("+name+"))");
 				//DataFrameWindow.setTopDataWindow(name);
 			}
+		}else if(cmd.equals("compute")){
+			needsRLocked=true;
+			ComputeDialog sub = new ComputeDialog(JGR.MAINRCONSOLE);
+			sub.setLocationRelativeTo(null);
+			sub.setVisible(true);
+			WindowTracker.addWindow(sub);
 		}else if(cmd.equals("subset")){
 			needsRLocked=true;
 			SubsetDialog sub = new SubsetDialog(JGR.MAINRCONSOLE);

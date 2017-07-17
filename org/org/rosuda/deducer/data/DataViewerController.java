@@ -233,7 +233,12 @@ public class DataViewerController {
 		Object[] types = datasets.keySet().toArray();
 		LinkedList l = new LinkedList();
 		for(int i=0;i<types.length;i++){
-			l.addAll((List)datasets.get((String)types[i]));
+			String type = (String) types[i];
+			if(type != null){
+				List ds = (List) datasets.get(type);
+				if(ds != null)
+					l.addAll(ds);
+			}
 		}
 		return l;
 	}

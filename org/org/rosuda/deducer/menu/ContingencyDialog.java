@@ -47,40 +47,40 @@ import javax.swing.border.BevelBorder;
 
 
 public class ContingencyDialog extends JDialog implements ActionListener {
-	private VariableSelector variableSelector;
-	private SingletonAddRemoveButton addRemoveStratumButton;
-	private IconButton removeColumn;
-	private JButton help;
-	private SubsetPanel subsetPanel;
-	private SingletonDJList stratumList;
-	private DJList columnList;
-	private DJList rowList;
-	private JButton postHoc;
-	private JButton statistics;
-	private JButton cells;
-	private IconButton addColumn;
-	private JButton results;
-	private IconButton removeRow;
-	private IconButton addRow;
-	private OkayCancelPanel okCancel;
-	private JPanel strataPanel;
-	private JPanel columnPanel;
-	private JPanel rowPanel;
+	protected VariableSelector variableSelector;
+	protected SingletonAddRemoveButton addRemoveStratumButton;
+	protected IconButton removeColumn;
+	protected JButton help;
+	protected SubsetPanel subsetPanel;
+	protected SingletonDJList stratumList;
+	protected DJList columnList;
+	protected DJList rowList;
+	protected JButton postHoc;
+	protected JButton statistics;
+	protected JButton cells;
+	protected IconButton addColumn;
+	protected JButton results;
+	protected IconButton removeRow;
+	protected IconButton addRow;
+	protected OkayCancelPanel okCancel;
+	protected JPanel strataPanel;
+	protected JPanel columnPanel;
+	protected JPanel rowPanel;
 	
-	private CellOptions cellOpt;
-	private StatisticsOptions statOpt;
-	private ResultsOptions resultOpt;
+	protected CellOptions cellOpt;
+	protected StatisticsOptions statOpt;
+	protected ResultsOptions resultOpt;
 	
-	private String rCmd ="";
+	protected String rCmd ="";
 	
-	private static CellOptions lastCellOpt;
-	private static StatisticsOptions lastStatOpt;
-	private static ResultsOptions lastResultOpt;
-	private static DefaultListModel lastRowModel;
-	private static DefaultListModel lastColumnModel;
-	private static DefaultListModel lastStratumModel;
-	private static String lastDataName;
-	private static String lastSubset;
+	protected static CellOptions lastCellOpt;
+	protected static StatisticsOptions lastStatOpt;
+	protected static ResultsOptions lastResultOpt;
+	protected static DefaultListModel lastRowModel;
+	protected static DefaultListModel lastColumnModel;
+	protected static DefaultListModel lastStratumModel;
+	protected static String lastDataName;
+	protected static String lastSubset;
 	
 	public ContingencyDialog(JFrame frame) {
 		super(frame);
@@ -143,7 +143,7 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 		
 	}
 	
-	private void initGUI() {
+	protected void initGUI() {
 		try {
 			AnchorLayout thisLayout = new AnchorLayout();
 			getContentPane().setLayout(thisLayout);
@@ -556,19 +556,19 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 	
 	
 	public class CellDialog extends JDialog implements ActionListener {
-		private JPanel cellSumPanel;
-		private JCheckBox rowPerc;
-		private JCheckBox noTables;
-		private OkayCancelPanel okcan;
-		//private JButton cancel;
-		//private JButton okay;
-		private JCheckBox adjResid;
-		private JCheckBox stdResid;
-		private JCheckBox resid;
-		private JCheckBox expected;
-		private JPanel chiSumPanel;
-		private JCheckBox totalPerc;
-		private JCheckBox colPerc;
+		protected JPanel cellSumPanel;
+		protected JCheckBox rowPerc;
+		protected JCheckBox noTables;
+		protected OkayCancelPanel okcan;
+		//protected JButton cancel;
+		//protected JButton okay;
+		protected JCheckBox adjResid;
+		protected JCheckBox stdResid;
+		protected JCheckBox resid;
+		protected JCheckBox expected;
+		protected JPanel chiSumPanel;
+		protected JCheckBox totalPerc;
+		protected JCheckBox colPerc;
 		
 
 		public CellDialog(JDialog d,CellOptions opt) {
@@ -602,7 +602,7 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 			return opt;
 		}
 		
-		private void initGUI() {
+		protected void initGUI() {
 			try {
 				{
 					getContentPane().setLayout(null);
@@ -700,47 +700,47 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 
 	
 	public class StatisticsDialog extends JDialog implements ActionListener {
-		private JPanel nomByNomPanel;
-		private JCheckBox mantelHaen;
-		private JButton custom;
-		private JButton helpButton;
-		private JButton kruskalOptions;
-		private JButton exchAssump;
-		private IconButton lrgAssump;
-		private JCheckBox kruskal;
-		private JPanel nomByOrdPanel;
-		private JButton spearmanOptions;
-		private IconButton lrgAssump1;
-		private IconButton lrgAssump2;
-		private JSeparator jSeparator4;
-		private IconButton lrgAssump3;
-		private IconButton lrgAssump9;
-		private JCheckBox spearmans;
-		private JButton kendallOptions;
-		private IconButton lrgAssump4;
-		private JCheckBox kendall;
-		private JPanel ordByOrdPanel;
-		private JButton homoAssump;
-		private IconButton lrgAssump5;
-		private JSeparator jSeparator3;
-		private JSeparator jSeparator2;
-		private JLabel strataLabel;
-		private JSeparator jSeparator1;
-		private JSeparator sep;
-		private IconButton lrgAssump6;
-		private IconButton lrgAssump7;
-		private JButton liklihoodOptions;
-		private JCheckBox liklihood;
-		private JButton mantelOptions;
-		private JButton fishersOptions;
-		private JCheckBox fishers;
-		private JButton chisqOptions;
-		private JCheckBox chisq;
-		private OkayCancelPanel okcan;
-		private IconButton approxAssump;
+		protected JPanel nomByNomPanel;
+		protected JCheckBox mantelHaen;
+		protected JButton custom;
+		protected JButton helpButton;
+		protected JButton kruskalOptions;
+		protected JButton exchAssump;
+		protected IconButton lrgAssump;
+		protected JCheckBox kruskal;
+		protected JPanel nomByOrdPanel;
+		protected JButton spearmanOptions;
+		protected IconButton lrgAssump1;
+		protected IconButton lrgAssump2;
+		protected JSeparator jSeparator4;
+		protected IconButton lrgAssump3;
+		protected IconButton lrgAssump9;
+		protected JCheckBox spearmans;
+		protected JButton kendallOptions;
+		protected IconButton lrgAssump4;
+		protected JCheckBox kendall;
+		protected JPanel ordByOrdPanel;
+		protected JButton homoAssump;
+		protected IconButton lrgAssump5;
+		protected JSeparator jSeparator3;
+		protected JSeparator jSeparator2;
+		protected JLabel strataLabel;
+		protected JSeparator jSeparator1;
+		protected JSeparator sep;
+		protected IconButton lrgAssump6;
+		protected IconButton lrgAssump7;
+		protected JButton liklihoodOptions;
+		protected JCheckBox liklihood;
+		protected JButton mantelOptions;
+		protected JButton fishersOptions;
+		protected JCheckBox fishers;
+		protected JButton chisqOptions;
+		protected JCheckBox chisq;
+		protected OkayCancelPanel okcan;
+		protected IconButton approxAssump;
 		
-		private ChiOptions chiSquared;
-		private LikeOptions lrTest;
+		protected ChiOptions chiSquared;
+		protected LikeOptions lrTest;
 
 
 		
@@ -783,7 +783,7 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 			return so;
 		}
 		
-		private void initGUI() {
+		protected void initGUI() {
 			try {
 				getContentPane().setLayout(null);
 				{
@@ -1059,16 +1059,16 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 		
 		
 		public class ChiOptionDialog extends JDialog implements ActionListener {
-			private JSeparator sep;
-			private JSeparator jSeparator3;
-			private JSeparator jSeparator2;
-			private OkayCancelPanel okcan;
-			private JLabel simSizeLabel;
-			private JTextField simSize;
-			private JSeparator jSeparator1;
-			private JCheckBox monteCarlo;
-			private JCheckBox asymptTest;
-			private JCheckBox conservative;
+			protected JSeparator sep;
+			protected JSeparator jSeparator3;
+			protected JSeparator jSeparator2;
+			protected OkayCancelPanel okcan;
+			protected JLabel simSizeLabel;
+			protected JTextField simSize;
+			protected JSeparator jSeparator1;
+			protected JCheckBox monteCarlo;
+			protected JCheckBox asymptTest;
+			protected JCheckBox conservative;
 
 			
 			public ChiOptionDialog(JDialog d,ChiOptions chi) {
@@ -1100,7 +1100,7 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 				
 			}
 			
-			private void initGUI() {
+			protected void initGUI() {
 				try {
 					AnchorLayout thisLayout = new AnchorLayout();
 					getContentPane().setLayout(thisLayout);
@@ -1219,7 +1219,7 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 
 		
 		public class LikeOptionDialog extends JDialog implements ActionListener{
-			private JCheckBox conservative;
+			protected JCheckBox conservative;
 			OkayCancelPanel okcan;
 			
 			public LikeOptionDialog(JDialog d,LikeOptions lrt) {
@@ -1238,7 +1238,7 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 				return lrt;
 			}
 			
-			private void initGUI() {
+			protected void initGUI() {
 				try {
 					this.setLayout(null);
 					{
@@ -1276,10 +1276,10 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 	}
 	
 	public class ResultsDialog extends JDialog implements ActionListener{
-		private JCheckBox keep;
-		private OkayCancelPanel okcan;
-		private JTextField resultName;
-		private JLabel name;
+		protected JCheckBox keep;
+		protected OkayCancelPanel okcan;
+		protected JTextField resultName;
+		protected JLabel name;
 		
 		public ResultsDialog(JDialog d,ResultsOptions opt) {
 			super(d);
@@ -1305,7 +1305,7 @@ public class ContingencyDialog extends JDialog implements ActionListener {
 			return opt;
 		}
 		
-		private void initGUI() {
+		protected void initGUI() {
 			try {
 				{
 					getContentPane().setLayout(null);
