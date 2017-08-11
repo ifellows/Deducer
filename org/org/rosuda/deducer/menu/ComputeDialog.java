@@ -126,7 +126,7 @@ public class ComputeDialog extends JDialog implements ActionListener, MouseListe
 				funcPanel.setLayout(funcPanelLayout);
 				getContentPane().add(funcPanel);
 				funcPanel.setPreferredSize(new java.awt.Dimension(140, 173));
-				funcPanel.setBorder(BorderFactory.createTitledBorder("Logical Functions"));
+				funcPanel.setBorder(BorderFactory.createTitledBorder("Functions"));
 				funcPanel.setBounds(233, 112, 140, 173);
 				{
 					funcScroller = new JScrollPane();

@@ -1,6 +1,6 @@
 Package: Deducer
-Version: 0.8-0
-Date: 2017-07-17
+Version: 0.9-0
+Date: 2017-08-08
 Title: A Data Analysis GUI for R
 Author: Ian Fellows with contributions from others (see documentation).
 Maintainer: Ian Fellows <ian@fellstat.com>

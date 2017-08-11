@@ -159,7 +159,7 @@ public class FrequencyDialog extends javax.swing.JDialog implements ActionListen
 			boolean valid = false;
 			while(!valid){
 				String result =JOptionPane.showInputDialog(this, "How many digits should the \npercentages be rounded to?", digits+"");
-				if(result.length()==0){
+				if(result == null || result.length()==0){
 					digits=1;
 					valid=true;
 				}

@@ -822,7 +822,8 @@ public class RDataFrameModel extends ExDefaultTableModel {
 						int row, int column){
 			super.getTableCellRendererComponent(table, value,
 					selected, focused, row, column);
-
+			if(table == null || value == null)
+				return this;
 			if(row<getRealRowCount() || column<getRealColumnCount()){
 				if(value.toString().equals(NA_STRING)){
 					setHorizontalAlignment(RIGHT);
